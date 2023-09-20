@@ -1,0 +1,49 @@
+/* styles/App.css */
+
+/* Style for the main app container */
+.app {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  /* Style for the video player container */
+  .video-player {
+    margin: 20px;
+  }
+  
+  /* Style for the comment list container */
+  .comment-list {
+    margin-top: 20px;
+  }
+  
+  /* Style for individual comments */
+  .comment {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+  }
+  
+  /* Style for the comment form container */
+  .comment-form {
+    margin-top: 20px;
+  }
+  
+  /* Style for the comment text area */
+  .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  /* Style for the comment submit button */
+  .comment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  

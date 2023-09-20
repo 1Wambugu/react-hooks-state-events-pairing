@@ -1,18 +1,41 @@
-import video from "../data/video.js";
+import React, { useState } from 'react';
+import VideoPlayer from './VideoPlayer';
+import CommentList from './CommentList';
+import CommentForm from './CommentForm';
+
+const videoData = {
+  title: 'Sample Video',
+  url: 'https://www.youtube.com/embed/dpw9EHDh2bM',
+};
 
 function App() {
-  console.log("Here's your data:", video);
+  const [comments, setComments] = useState([]);
+  const [showComments, setShowComments] = useState(true);
+
+  const toggleComments = () => {
+    setShowComments(!showComments);
+  };
+
+  const addComment = (commentText) => {
+    const newComment = {
+      text: commentText,
+      id: comments.length + 1,
+    };
+    setComments([...comments, newComment]);
+  };
 
   return (
-    <div className="App">
-      <iframe
-        width="919"
-        height="525"
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-        frameBorder="0"
-        allowFullScreen
-        title="Thinking in React"
-      />
+    <div className="app">
+      <VideoPlayer video={videoData} />
+      <button onClick={toggleComments}>
+        {showComments ? 'Hide Comments' : 'Show Comments'}
+      </button>
+      {showComments && (
+        <>
+          <CommentList comments={comments} />
+          <CommentForm addComment={addComment} />
+        </>
+      )}
     </div>
   );
 }
